@@ -18,13 +18,7 @@ This project is a simple loan application API server implemented using TypeScrip
 
 To install the project on your local system, follow these steps:
 
-1. Clone this repository:
-
-git clone https://github.com/jinyoung22/LoanApplication.git
-
-or
-
-git clone git@github.com:jinyoung22/LoanApplication.git
+1. Clone this repository
 
 2. Navigate to the project folder:
 
