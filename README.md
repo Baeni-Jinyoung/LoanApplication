@@ -19,8 +19,8 @@ This project is a simple loan application API server implemented using TypeScrip
 To install the project on your local system, follow these steps:
 
 1. Clone this repository
-
-2. Install the required npm packages:
+2. Go to the folder (cd LoanApplication)
+3. Install the required npm packages:
 
 npm install
 
