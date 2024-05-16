@@ -42,6 +42,15 @@ npm test
 
 This command will execute all test files in the `tests` folder.
 
+## Running Code Coverage
+
+To measure the test coverage of the project, use the following command:
+
+npm run coverage
+
+**Review the Report**:
+   - The coverage report will be generated in the `coverage` folder within your project directory. To view the detailed HTML report, open the `coverage/lcov-report/index.html` file in your web browser.
+
 
 **
 ## HTTP Response Status Codes
