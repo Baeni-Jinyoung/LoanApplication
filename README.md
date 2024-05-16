@@ -41,3 +41,16 @@ To run the tests for the project, use the following command:
 npm test
 
 This command will execute all test files in the `tests` folder.
+
+**
+## HTTP Response Status Codes
+
+This API utilizes the following HTTP response status codes:
+
+- `200 OK`: The request has been successfully processed. This status code indicates that the resource for a GET request has been included in the message body and transmitted.
+- `201 Created`: The request has been successfully processed, and a new resource has been created. This status code is sent after POST requests or some PUT requests.
+- `204 No Content`: The request has been successfully processed, but there is no content to send. This status code is often used after DELETE requests.
+- `400 Bad Request`: The server could not understand the request. This typically occurs when the client's request format is incorrect.
+- `404 Not Found`: The requested resource could not be found. This status code is sent when the requested resource does not exist on the server.
+- `500 Internal Server Error`: There is a problem with the server, and it cannot process the request. This status code is sent when an error occurs inside the server.
+**
