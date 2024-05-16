@@ -8,6 +8,11 @@ describe('Loans API success test', () => {
     expect(res.body).toBeInstanceOf(Array);
   });
 
+  it('should return 404 for an invalid route', async () => {
+    const res = await request(app).get('/invalid-route');
+    expect(res.statusCode).toEqual(404);
+  });
+
   it('POST /loans', async () => {
     const loanData = {
       name: 'Phoebe',
@@ -20,6 +25,25 @@ describe('Loans API success test', () => {
     const res = await request(app).post('/loans').send(loanData);
     expect(res.statusCode).toEqual(201);
     expect(res.body).toHaveProperty('id');
+  });
+
+  it('POST /loans', async () => {
+    const loanData = {
+      name: 'Phoebe',
+      amount: 10000,
+      type: 'car',
+      income: 50000,
+      interestRate: 5
+    };
+
+    const res = await request(app).post('/loans').send(loanData);
+    expect(res.statusCode).toEqual(201);
+    expect(res.body).toHaveProperty('type');
+  });
+
+  it('should return 400 for invalid payload', async () => {
+    const res = await request(app).post('/loans').send({ name: '', amount: -100 });
+    expect(res.statusCode).toEqual(400);
   });
 
   describe('PUT /loans/:id', () => {
@@ -41,6 +65,37 @@ describe('Loans API success test', () => {
       expect(res.body).toHaveProperty('income', 60000);
       expect(res.body).toHaveProperty('interestRate', 4);
     });
+
+    it('should update the loan successfully', async () => {
+        const updatedLoanData = {
+          name: 'Jinyoung',
+          amount: 20000,
+          type: 'car',
+          income: 60000,
+          interestRate: 4
+        };
+  
+        const res = await request(app).put('/loans/1').send(updatedLoanData);
+        expect(res.statusCode).toEqual(200);
+        expect(res.body).toHaveProperty('type', 'car');
+      });
+  });
+
+  it('should return 400 Bad Request for invalid loan application data', async () => {
+    const invalidLoanData = {
+      name: 'Invalid Name',
+      amount: 'Invalid Amount',
+      type: 'Invalid Type', 
+      income: 'Invalid Income',
+      interestRate: 'Invalid Interest Rate'
+    };
+
+   const response = await request(app)
+      .put('/loans/1')
+      .send(invalidLoanData);
+
+    expect(response.status).toBe(400);
+    expect(response.text).toContain('Bad Request: Invalid data types');
   });
 
   describe('DELETE /loans/:id', () => {

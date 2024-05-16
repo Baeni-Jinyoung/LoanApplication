@@ -55,7 +55,7 @@ describe('validateLoanApplication', () => {
   it('should fail validation for invalid loan amount', () => {
     const loanApplication: LoanApplication = {
       id:1,
-      name: 'Jane Doe',
+      name: 'Phoebe',
       amount: 999,
       type: 'personal',
       income: 30000,
