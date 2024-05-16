@@ -20,11 +20,7 @@ To install the project on your local system, follow these steps:
 
 1. Clone this repository
 
-2. Navigate to the project folder:
-
-cd NODE-EXPRESS-TS
-
-3. Install the required npm packages:
+2. Install the required npm packages:
 
 npm install
 
