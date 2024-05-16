@@ -31,7 +31,7 @@ To start the development server, run the following command:
 
 npm start
 
-The server will be running at `http://localhost:3000`.
+The server will be running at `http://localhost:3000`. (nodemon will be running)
 
 
 ## Running Tests
