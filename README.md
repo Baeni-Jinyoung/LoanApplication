@@ -42,6 +42,7 @@ npm test
 
 This command will execute all test files in the `tests` folder.
 
+
 **
 ## HTTP Response Status Codes
 
@@ -53,4 +54,6 @@ This API utilizes the following HTTP response status codes:
 - `400 Bad Request`: The server could not understand the request. This typically occurs when the client's request format is incorrect.
 - `404 Not Found`: The requested resource could not be found. This status code is sent when the requested resource does not exist on the server.
 - `500 Internal Server Error`: There is a problem with the server, and it cannot process the request. This status code is sent when an error occurs inside the server.
+
+  
 **
